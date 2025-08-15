@@ -40,9 +40,9 @@ Este documento sirve como hoja de ruta para estudiar los conceptos de la Unidad 
 
 ## 📝 Progreso Actual
 
--   [ ] **Análisis del material teórico:** `capitulo7-polinomios.pdf`
--   [ ] **Resolución de la guía práctica:** `capitulo7-practica.pdf`
--   [ ] **Verificación con soluciones:** `capitulo7-solucion1.pdf`, `capitulo7-solucion2.pdf`
+-   [ ] **Análisis del material teórico:** `lecturas/capitulo7-polinomios.pdf`
+-   [ ] **Resolución de la guía práctica:** `practica/capitulo7-practica.pdf`
+-   [ ] **Verificación con soluciones:** `practica/capitulo7-solucion1.pdf`, `practica/capitulo7-solucion2.pdf`
 -   [ ] **Generación de la guía de HP Prime para Polinomios.**
 
 ---

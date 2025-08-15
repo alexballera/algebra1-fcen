@@ -37,9 +37,9 @@ Este documento sirve como hoja de ruta para estudiar los conceptos de la Unidad 
 
 ## 📝 Progreso Actual
 
--   [ ] **Análisis del material teórico:** `capitulo6-numeros-complejos.pdf`
--   [ ] **Resolución de la guía práctica:** `capitulo6-practica.pdf`
--   [ ] **Verificación con soluciones:** `capitulo6-solucion1.pdf`, `capitulo6-solucion2.pdf`
+-   [ ] **Análisis del material teórico:** `lecturas/capitulo6-numeros-complejos.pdf`
+-   [ ] **Resolución de la guía práctica:** `practica/capitulo6-practica.pdf`
+-   [ ] **Verificación con soluciones:** `practica/capitulo6-solucion1.pdf`, `practica/capitulo6-solucion2.pdf`
 -   [ ] **Generación de la guía de HP Prime para Números Complejos.**
 
 ---

@@ -28,9 +28,9 @@ Este documento sirve como hoja de ruta para estudiar los conceptos de la Unidad 
 
 ## 📝 Progreso Actual
 
--   [ ] **Análisis del material teórico:** `capitulo2-numeros-naturales-induccion.pdf`
--   [ ] **Resolución de la guía práctica:** `capitulo2-practica.pdf`
--   [ ] **Verificación con soluciones:** `capitulo2-solucion1.pdf`, `capitulo2-solucion2.pdf`
+-   [ ] **Análisis del material teórico:** `lecturas/capitulo2-numeros-naturales-induccion.pdf`
+-   [ ] **Resolución de la guía práctica:** `practica/capitulo2-practica.pdf`
+-   [ ] **Verificación con soluciones:** `practica/capitulo2-solucion1.pdf`, `practica/capitulo2-solucion2.pdf`
 
 ---
 *Última actualización: 2025-08-15*

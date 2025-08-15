@@ -24,7 +24,18 @@ Este directorio está dividido en capítulos, cada uno correspondiendo a una uni
 -   **Capítulo 6:** Números Complejos.
 -   **Capítulo 7:** Polinomios.
 
-Dentro de cada capítulo, encontrarás los apuntes teóricos, la guía de trabajos prácticos, las soluciones correspondientes y **cuestionarios interactivos** para evaluar tu comprensión.
+Cada capítulo está organizado en subdirectorios especializados para facilitar la navegación:
+
+#### Estructura de cada Capítulo
+```
+capitulo<N>/
+├── lecturas/           # Material teórico y apuntes
+├── practica/           # Guías de trabajos prácticos y soluciones
+├── resumen/            # Resúmenes LaTeX y archivos generados
+└── plan-de-estudio-unidad<N>.md  # Plan de estudio específico
+```
+
+Dentro de cada capítulo, encontrarás material teórico organizado, guías de trabajos prácticos con sus soluciones, resúmenes en formato PDF/LaTeX y **cuestionarios interactivos** para evaluar tu comprensión.
 
 ## Cuestionarios Interactivos
 
@@ -41,11 +52,11 @@ Para reforzar el aprendizaje de cada unidad temática, se incluyen **cuestionari
 
 ### Convención de Nombres
 
-Los archivos de cuestionario siguen el siguiente formato dentro del directorio de cada capítulo:
+Los archivos de cuestionario siguen el siguiente formato dentro del subdirectorio `lecturas/` de cada capítulo:
 
--   **Archivo HTML:** `capitulo<N>-cuestionario.html`
+-   **Archivo HTML:** `lecturas/capitulo<N>-cuestionario.html`
 
-Donde `<N>` es el número de la unidad correspondiente (ej: `capitulo1-cuestionario.html`).
+Donde `<N>` es el número de la unidad correspondiente (ej: `lecturas/capitulo1-cuestionario.html`).
 
 ### Contenido por Unidad
 
@@ -68,12 +79,12 @@ Para mantener un formato consistente y de alta calidad, los resúmenes de cada u
 
 ### Convención de Nombres
 
-Los archivos de resumen deben seguir el siguiente formato dentro del directorio de cada capítulo:
+Los archivos de resumen deben seguir el siguiente formato dentro del subdirectorio `resumen/` de cada capítulo:
 
--   **Fuente LaTeX:** `resumen-unidad<N>.tex`
--   **Salida PDF:** `resumen-unidad<N>.pdf`
+-   **Fuente LaTeX:** `resumen/resumen-unidad<N>.tex`
+-   **Salida PDF:** `resumen/resumen-unidad<N>.pdf`
 
-Donde `<N>` es el número de la unidad correspondiente (ej: `resumen-unidad1.tex`).
+Donde `<N>` es el número de la unidad correspondiente (ej: `resumen/resumen-unidad1.tex`).
 
 ### Instrucciones de Generación
 
@@ -87,13 +98,13 @@ Donde `<N>` es el número de la unidad correspondiente (ej: `resumen-unidad1.tex
 2.  **Generar el PDF:** Una vez creado o modificado el archivo `.tex`, utiliza el siguiente comando para compilarlo a PDF. Asegúrate de estar en el directorio raíz del proyecto.
 
     ```bash
-    pdflatex -output-directory=unidades/capitulo<N>/ unidades/capitulo<N>/resumen-unidad<N>.tex
+    pdflatex -output-directory=unidades/capitulo<N>/resumen/ unidades/capitulo<N>/resumen/resumen-unidad<N>.tex
     ```
     Reemplaza `<N>` por el número de la unidad que deseas compilar. Por ejemplo, para la Unidad 1:
     ```bash
-    pdflatex -output-directory=unidades/capitulo1/ unidades/capitulo1/resumen-unidad1.tex
+    pdflatex -output-directory=unidades/capitulo1/resumen/ unidades/capitulo1/resumen/resumen-unidad1.tex
     ```
-    Esto generará el archivo PDF y los archivos auxiliares (`.aux`, `.log`) dentro del directorio de la unidad correspondiente.
+    Esto generará el archivo PDF y los archivos auxiliares (`.aux`, `.log`) dentro del subdirectorio `resumen/` de la unidad correspondiente.
 
 ## Contribuciones
 

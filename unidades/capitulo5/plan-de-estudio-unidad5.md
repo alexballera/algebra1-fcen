@@ -38,9 +38,9 @@ Este documento sirve como hoja de ruta para estudiar los conceptos de la Unidad 
 
 ## 📝 Progreso Actual
 
--   [ ] **Análisis del material teórico:** `capitulo5-enteros-segunda-parte.pdf`
--   [ ] **Resolución de la guía práctica:** `capitulo5-practica.pdf`
--   [ ] **Verificación con soluciones:** `capitulo5-solucion1.pdf`, `capitulo5-solucion2.pdf`
+-   [ ] **Análisis del material teórico:** `lecturas/capitulo5-enteros-segunda-parte.pdf`
+-   [ ] **Resolución de la guía práctica:** `practica/capitulo5-practica.pdf`
+-   [ ] **Verificación con soluciones:** `practica/capitulo5-solucion1.pdf`, `practica/capitulo5-solucion2.pdf`
 -   [ ] **Generación de la guía de HP Prime para Aritmética Modular.**
 
 ---

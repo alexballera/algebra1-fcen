@@ -37,12 +37,13 @@ Este documento sirve como hoja de ruta para estudiar los conceptos de la Unidad 
 
 ## 📝 Progreso Actual
 
--   [ ] **Análisis del material teórico:** `capitulo1-conjuntos-relaciones-funciones.pdf`
--   [ ] **Resolución de la guía práctica:** `capitulo1-practica.pdf`
+-   [ ] **Análisis del material teórico:** `lecturas/capitulo1-conjuntos-relaciones-funciones.pdf`
+-   [ ] **Resolución de la guía práctica:** `practica/capitulo1-practica.pdf`
     -   [ ] Ejercicios de Conjuntos (1-16)
     -   [ ] Ejercicios de Relaciones (17-28)
     -   [ ] Ejercicios de Funciones (29-36)
--   [ ] **Verificación con soluciones:** `capitulo1-solucion1.pdf`, `capitulo1-solucion2.pdf`
+-   [ ] **Verificación con soluciones:** `practica/capitulo1-solucion1.pdf`, `practica/capitulo1-solucion2.pdf`
+-   [ ] **Cuestionario interactivo:** `lecturas/capitulo1-cuestionario.html`
 -   [ ] **Generación de la guía de HP Prime para Funciones.**
 
 ---

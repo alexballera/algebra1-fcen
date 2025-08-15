@@ -38,9 +38,9 @@ Este documento sirve como hoja de ruta para estudiar los conceptos de la Unidad 
 
 ## 📝 Progreso Actual
 
--   [ ] **Análisis del material teórico:** `capitulo4-enteros-primera-parte.pdf`
--   [ ] **Resolución de la guía práctica:** `capitulo4-practica.pdf`
--   [ ] **Verificación con soluciones:** `capitulo4-solucion1.pdf`, `capitulo4-solucion2.pdf`
+-   [ ] **Análisis del material teórico:** `lecturas/capitulo4-enteros-primera-parte.pdf`
+-   [ ] **Resolución de la guía práctica:** `practica/capitulo4-practica.pdf`
+-   [ ] **Verificación con soluciones:** `practica/capitulo4-solucion1.pdf`, `practica/capitulo4-solucion2.pdf`
 -   [ ] **Generación de la guía de HP Prime para Aritmética Entera.**
 
 ---

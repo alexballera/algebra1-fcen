@@ -36,9 +36,9 @@ Este documento sirve como hoja de ruta para estudiar los conceptos de la Unidad 
 
 ## 📝 Progreso Actual
 
--   [ ] **Análisis del material teórico:** `capitulo3-combinatoria.pdf`
--   [ ] **Resolución de la guía práctica:** `capitulo3-practica.pdf`
--   [ ] **Verificación con soluciones:** `capitulo3-solucion1.pdf`, `capitulo3-solucion2.pdf`
+-   [ ] **Análisis del material teórico:** `lecturas/capitulo3-combinatoria.pdf`
+-   [ ] **Resolución de la guía práctica:** `practica/capitulo3-practica.pdf`
+-   [ ] **Verificación con soluciones:** `practica/capitulo3-solucion1.pdf`, `practica/capitulo3-solucion2.pdf`
 -   [ ] **Generación de la guía de HP Prime para cálculos combinatorios.**
 
 ---
