@@ -24,7 +24,33 @@ Este directorio está dividido en capítulos, cada uno correspondiendo a una uni
 -   **Capítulo 6:** Números Complejos.
 -   **Capítulo 7:** Polinomios.
 
-Dentro de cada capítulo, encontrarás los apuntes teóricos, la guía de trabajos prácticos y las soluciones correspondientes.
+Dentro de cada capítulo, encontrarás los apuntes teóricos, la guía de trabajos prácticos, las soluciones correspondientes y **cuestionarios interactivos** para evaluar tu comprensión.
+
+## Cuestionarios Interactivos
+
+Para reforzar el aprendizaje de cada unidad temática, se incluyen **cuestionarios interactivos** desarrollados con tecnologías web modernas (HTML, CSS, JavaScript).
+
+### Características de los Cuestionarios
+
+-   **Interfaz moderna y responsive**: Diseño limpio utilizando Tailwind CSS con tipografía Inter.
+-   **Múltiples versiones**: Cada cuestionario genera hasta 10 variantes diferentes con preguntas mezcladas aleatoriamente.
+-   **20 preguntas por examen**: Cada sesión incluye 20 preguntas de opción múltiple sobre el tema de la unidad.
+-   **Retroalimentación inmediata**: Explicaciones detalladas para cada respuesta correcte e incorrecta.
+-   **Sistema de puntaje**: Seguimiento del progreso durante el examen.
+-   **Efectos visuales**: Animaciones suaves y efectos hover para una mejor experiencia de usuario.
+
+### Convención de Nombres
+
+Los archivos de cuestionario siguen el siguiente formato dentro del directorio de cada capítulo:
+
+-   **Archivo HTML:** `capitulo<N>-cuestionario.html`
+
+Donde `<N>` es el número de la unidad correspondiente (ej: `capitulo1-cuestionario.html`).
+
+### Contenido por Unidad
+
+-   **Capítulo 1**: Preguntas sobre Conjuntos, Relaciones y Funciones con explicaciones teóricas detalladas.
+-   **Capítulos posteriores**: Se agregarán progresivamente cuestionarios específicos para cada tema.
 
 ## Uso de Herramientas Tecnológicas
 
