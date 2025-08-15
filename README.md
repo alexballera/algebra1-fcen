@@ -26,6 +26,39 @@ Este directorio está dividido en capítulos, cada uno correspondiendo a una uni
 
 Dentro de cada capítulo, encontrarás los apuntes teóricos, la guía de trabajos prácticos y las soluciones correspondientes.
 
+## Generación de Resúmenes en PDF
+
+Para mantener un formato consistente y de alta calidad, los resúmenes de cada unidad se gestionan a través de archivos LaTeX.
+
+### Convención de Nombres
+
+Los archivos de resumen deben seguir el siguiente formato dentro del directorio de cada capítulo:
+
+-   **Fuente LaTeX:** `resumen-unidad<N>.tex`
+-   **Salida PDF:** `resumen-unidad<N>.pdf`
+
+Donde `<N>` es el número de la unidad correspondiente (ej: `resumen-unidad1.tex`).
+
+### Instrucciones de Generación
+
+1.  **Prerrequisitos:** Es necesario tener una distribución de LaTeX instalada. En sistemas Debian/Ubuntu, puedes instalarla con los siguientes comandos:
+    ```bash
+    sudo apt-get update
+    sudo apt-get install texlive-latex-base
+    sudo apt-get install texlive-latex-recommended
+    ```
+
+2.  **Generar el PDF:** Una vez creado o modificado el archivo `.tex`, utiliza el siguiente comando para compilarlo a PDF. Asegúrate de estar en el directorio raíz del proyecto.
+
+    ```bash
+    pdflatex -output-directory=unidades/capitulo<N>/ unidades/capitulo<N>/resumen-unidad<N>.tex
+    ```
+    Reemplaza `<N>` por el número de la unidad que deseas compilar. Por ejemplo, para la Unidad 1:
+    ```bash
+    pdflatex -output-directory=unidades/capitulo1/ unidades/capitulo1/resumen-unidad1.tex
+    ```
+    Esto generará el archivo PDF y los archivos auxiliares (`.aux`, `.log`) dentro del directorio de la unidad correspondiente.
+
 ## Contribuciones
 
 ¡Las contribuciones son bienvenidas! Si tienes material que no está en el repositorio, encontraste un error o quieres proponer una mejora, no dudes en abrir un **Pull Request**.

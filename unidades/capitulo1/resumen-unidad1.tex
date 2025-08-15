@@ -1,0 +1,82 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+
+\title{\textbf{Resumen: Conceptos Clave - Unidad 1}}
+\author{Álgebra I - FCEyN}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{1. Conjuntos}
+
+\subsection*{Operaciones B\'{a}sicas}
+\begin{itemize}
+    \item \textbf{Pertenencia}: Un objeto $a$ es un elemento de un conjunto $A$. Se escribe $a \in A$.
+    \item \textbf{Inclusi\'{o}n}: Un conjunto $A$ es subconjunto de $B$ si todo elemento de $A$ es tambi\'{e}n elemento de $B$.
+    \[ A \subseteq B \iff \forall x, (x \in A \implies x \in B) \]
+    \item \textbf{Uni\'{o}n}: El conjunto de elementos que pertenecen a $A$, a $B$, o a ambos.
+    \[ A \cup B = \{x \mid x \in A \lor x \in B\} \]
+    \item \textbf{Intersecci\'{o}n}: El conjunto de elementos que pertenecen simult\'{a}neamente a $A$ y a $B$.
+    \[ A \cap B = \{x \mid x \in A \land x \in B\} \]
+    \item \textbf{Complemento}: El conjunto de elementos que no pertenecen a $A$ (respecto a un conjunto universal $U$).
+    \[ A^c = \{x \in U \mid x \notin A\} \]
+    \item \textbf{Diferencia}: El conjunto de elementos que pertenecen a $A$ pero no a $B$.
+    \[ A - B = \{x \mid x \in A \land x \notin B\} = A \cap B^c \]
+    \item \textbf{Diferencia Sim\'{e}trica}: El conjunto de elementos que pertenecen a $A$ o a $B$, pero no a ambos.
+    \[ A \Delta B = (A - B) \cup (B - A) \]
+\end{itemize}
+
+\subsection*{Otros Conceptos}
+\begin{itemize}
+    \item \textbf{Conjunto de Partes}: El conjunto formado por todos los subconjuntos de $A$.
+    \[ \mathcal{P}(A) = \{B \mid B \subseteq A\} \]
+    \item \textbf{Producto Cartesiano}: El conjunto de todos los pares ordenados $(a, b)$ donde $a \in A$ y $b \in B$.
+    \[ A \times B = \{(a, b) \mid a \in A \land b \in B\} \]
+\end{itemize}
+
+\section*{2. Relaciones}
+Una \textbf{relaci\'{o}n} $R$ de un conjunto $A$ en un conjunto $B$ es un subconjunto del producto cartesiano $A \times B$. Si $(a, b) \in R$, se escribe $aRb$.
+
+\subsection*{Clasificaci\'{o}n de Relaciones (en un conjunto A)}
+Sea $R$ una relaci\'{o}n en $A$ (es decir, $R \subseteq A \times A$).
+\begin{itemize}
+    \item \textbf{Reflexiva:} Todo elemento est\'{a} relacionado consigo mismo.
+    \[ \forall a \in A, (a, a) \in R \]
+    \item \textbf{Sim\'{e}trica:} Si $a$ est\'{a} relacionado con $b$, entonces $b$ est\'{a} relacionado con $a$.
+    \[ \forall a, b \in A, (a, b) \in R \implies (b, a) \in R \]
+    \item \textbf{Antisim\'{e}trica:} Si $a$ est\'{a} relacionado con $b$ y $b$ con $a$, entonces $a$ y $b$ son el mismo elemento.
+    \[ \forall a, b \in A, ((a, b) \in R \land (b, a) \in R) \implies a = b \]
+    \item \textbf{Transitiva:} Si $a$ est\'{a} relacionado con $b$ y $b$ con $c$, entonces $a$ est\'{a} relacionado con $c$.
+    \[ \forall a, b, c \in A, ((a, b) \in R \land (b, c) \in R) \implies (a, c) \in R \]
+\end{itemize}
+
+\subsection*{Tipos de Relaciones}
+\begin{itemize}
+    \item \textbf{Relaci\'{o}n de Equivalencia:} Es una relaci\'{o}n reflexiva, sim\'{e}trica y transitiva.
+    \item \textbf{Relaci\'{o}n de Orden:} Es una relaci\'{o}n reflexiva, antisim\'{e}trica y transitiva.
+    \item \textbf{Clase de Equivalencia de $a$}: En una relaci\'{o}n de equivalencia, es el conjunto de todos los elementos relacionados con $a$.
+    \[ [a] = \{x \in A \mid xRa\} \]
+\end{itemize}
+
+\section*{3. Funciones}
+Una \textbf{funci\'{o}n} $f$ de $A$ en $B$ ($f: A \to B$) es una relaci\'{o}n que asigna a cada elemento de $A$ (dominio) un \textbf{uacute}nico elemento de $B$ (codominio).
+
+\subsection*{Clasificaci\'{o}n de Funciones}
+\begin{itemize}
+    \item \textbf{Inyectiva (uno a uno):} Elementos distintos del dominio tienen im\'{a}genes distintas.
+    \[ \forall a_1, a_2 \in A, f(a_1) = f(a_2) \implies a_1 = a_2 \]
+    \item \textbf{Sobreyectiva (suryectiva):} Todo elemento del codominio es imagen de al menos un elemento del dominio. El rango es igual al codominio.
+    \[ \forall b \in B, \exists a \in A \text{ tal que } f(a) = b \]
+    \item \textbf{Biyectiva:} Es inyectiva y sobreyectiva al mismo tiempo.
+\end{itemize}
+
+\subsection*{Operaciones}
+\begin{itemize}
+    \item \textbf{Composici\'{o}n de Funciones}: Aplicar una funci\'{o}n despu\'{e}s de otra.
+    \[ (g \circ f)(x) = g(f(x)) \]
+    \item \textbf{Funci\'{o}n Inversa}: Si una funci\'{o}n $f: A \to B$ es biyectiva, su inversa $f^{-1}: B \to A$ es la funci\'{o}n que \text{
