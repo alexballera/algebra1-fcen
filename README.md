@@ -26,6 +26,16 @@ Este directorio está dividido en capítulos, cada uno correspondiendo a una uni
 
 Dentro de cada capítulo, encontrarás los apuntes teóricos, la guía de trabajos prácticos y las soluciones correspondientes.
 
+## Uso de Herramientas Tecnológicas
+
+Uno de los objetivos de este proyecto es aprender a utilizar eficientemente las herramientas tecnológicas como apoyo en el estudio del álgebra.
+
+### Calculadora HP Prime
+
+En la medida de las posibilidades y según el contenido de cada unidad, se buscará integrar el uso de la calculadora HP Prime. Para las unidades donde su aplicación sea relevante, se creará una **guía de uso rápido** con ejemplos prácticos y comandos útiles para resolver problemas específicos de la materia.
+
+El material de referencia de la calculadora se encuentra en el directorio `hp-prime/`.
+
 ## Generación de Resúmenes en PDF
 
 Para mantener un formato consistente y de alta calidad, los resúmenes de cada unidad se gestionan a través de archivos LaTeX.
