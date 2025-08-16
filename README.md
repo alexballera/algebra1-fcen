@@ -10,17 +10,17 @@ El contenido está organizado en los siguientes directorios principales:
 
 ### 📁 `sesiones/`
 
-Es el directorio principal del material de estudio, dividido en capítulos que corresponden a cada unidad temática del programa oficial. La estructura es la siguiente:
+Es el directorio principal del material de estudio, dividido en sesiones que corresponden a cada unidad temática del programa oficial. La estructura es la siguiente:
 
--   **Capítulo 1:** Conjuntos, Relaciones y Funciones.
--   **Capítulo 2:** Números Naturales e Inducción.
--   **Capítulo 3:** Combinatoria.
--   **Capítulo 4:** Números Enteros (Divisibilidad, Primos, MCD).
--   **Capítulo 5:** Números Enteros (Congruencias y Ecuaciones Diofánticas).
--   **Capítulo 6:** Números Complejos.
--   **Capítulo 7:** Polinomios.
+-   **Sesión 1:** Conjuntos, Relaciones y Funciones.
+-   **Sesión 2:** Números Naturales e Inducción.
+-   **Sesión 3:** Combinatoria.
+-   **Sesión 4:** Números Enteros (Divisibilidad, Primos, MCD).
+-   **Sesión 5:** Números Enteros (Congruencias y Ecuaciones Diofánticas).
+-   **Sesión 6:** Números Complejos.
+-   **Sesión 7:** Polinomios.
 
-Cada capítulo contiene subdirectorios para el material teórico, las guías de trabajos prácticos, resúmenes y cuestionarios interactivos.
+Cada sesión contiene subdirectorios para el material teórico, las guías de trabajos prácticos, resúmenes y cuestionarios interactivos.
 
 ### 📁 `bibliografia/`
 
@@ -48,9 +48,9 @@ Los resúmenes de cada unidad se gestionan a través de archivos LaTeX para aseg
 ### Instrucciones de Generación
 
 1.  **Prerrequisitos:** Tener una distribución de LaTeX instalada.
-2.  **Generar el PDF:** Utiliza el comando `pdflatex` desde la raíz del proyecto. Por ejemplo, para la Unidad 1:
+2.  **Generar el PDF:** Utiliza el comando `pdflatex` desde la raíz del proyecto. Por ejemplo, para la Sesión 1:
     ```bash
-    pdflatex -output-directory=sesiones/capitulo1/resumen/ sesiones/capitulo1/resumen/resumen-unidad1.tex
+    pdflatex -output-directory=sesiones/sesion1/resumen/ sesiones/sesion1/resumen/resumen-unidad1.tex
     ```
 
 ## Contribuciones
