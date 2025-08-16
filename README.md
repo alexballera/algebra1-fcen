@@ -12,7 +12,7 @@ El contenido está organizado en dos directorios principales:
 
 Contiene material de referencia general, como apuntes teóricos de distintas cátedras, libros recomendados y notas complementarias que sirven de apoyo durante toda la cursada.
 
-### 📁 `unidades/`
+### 📁 `sesiones/`
 
 Este directorio está dividido en capítulos, cada uno correspondiendo a una unidad temática del programa oficial de la materia. La estructura es la siguiente:
 
@@ -98,11 +98,11 @@ Donde `<N>` es el número de la unidad correspondiente (ej: `resumen/resumen-uni
 2.  **Generar el PDF:** Una vez creado o modificado el archivo `.tex`, utiliza el siguiente comando para compilarlo a PDF. Asegúrate de estar en el directorio raíz del proyecto.
 
     ```bash
-    pdflatex -output-directory=unidades/capitulo<N>/resumen/ unidades/capitulo<N>/resumen/resumen-unidad<N>.tex
+    pdflatex -output-directory=sesiones/capitulo<N>/resumen/ sesiones/capitulo<N>/resumen/resumen-unidad<N>.tex
     ```
     Reemplaza `<N>` por el número de la unidad que deseas compilar. Por ejemplo, para la Unidad 1:
     ```bash
-    pdflatex -output-directory=unidades/capitulo1/resumen/ unidades/capitulo1/resumen/resumen-unidad1.tex
+    pdflatex -output-directory=sesiones/capitulo1/resumen/ sesiones/capitulo1/resumen/resumen-unidad1.tex
     ```
     Esto generará el archivo PDF y los archivos auxiliares (`.aux`, `.log`) dentro del subdirectorio `resumen/` de la unidad correspondiente.
 

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Exámenes de práctica sobre Conjuntos, Relaciones y Funciones - Álgebra I FCEyN UBA">
+    <meta name="keywords" content="conjuntos, relaciones, funciones, álgebra I, FCEyN, matemática, teoría de conjuntos">
+    <meta name="author" content="Álgebra I FCEyN - UBA">
+    <title>Exámenes de Práctica - Conjuntos, Relaciones y Funciones - Álgebra I FCEyN</title>
+     <script src="https://cdn.tailwindcss.com"></script>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+     <style>
+         body {
+             font-family: 'Inter', sans-serif;
+             background-color: #f3f4f6;
+             color: #1f2937;
+         }
+         .container {
+             max-width: 900px;
+             margin: 0 auto;
+             padding: 2rem;
+         }
+         .card {
+             background-color: #ffffff;
+             border-radius: 1rem;
+             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+             transition: transform 0.2s, box-shadow 0.2s;
+         }
+         .card:hover {
+             transform: translateY(-5px);
+             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+         }
+         .gradient-bg {
+             background: linear-gradient(135deg, #4f46e5 0%, #a78bfa 100%);
+         }
+         .quiz-button {
+             transition: background-color 0.2s, transform 0.1s;
+         }
+         .quiz-button:hover {
+             background-color: #4338ca;
+             transform: translateY(-2px);
+         }
+         .quiz-button:disabled {
+             opacity: 0.5;
+             cursor: not-allowed;
+         }
+         .answer-button {
+             width: 100%;
+             background-color: #e5e7eb;
+             color: #1f2937;
+             text-align: left;
+             padding: 1rem 1.5rem;
+             border-radius: 0.75rem;
+             font-weight: 500;
+             transition: background-color 0.2s, transform 0.1s;
+         }
+         .answer-button:hover:not(:disabled) {
+             background-color: #d1d5db;
+         }
+         .answer-button.correct {
+             background-color: #10b981;
+             color: white;
+             animation: pulse-correct 0.8s;
+         }
+         .answer-button.incorrect {
+             background-color: #ef4444;
+             color: white;
+             animation: shake 0.5s;
+         }
+         .explanation {
+             background-color: #f0f4f8;
+             border-left: 4px solid #4f46e5;
+             padding: 1rem;
+             margin-top: 1rem;
+             border-radius: 0.5rem;
+         }
+         @keyframes pulse-correct {
+             0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+             70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+             100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+         }
+         @keyframes shake {
+             0%, 100% { transform: translateX(0); }
+             25% { transform: translateX(-5px); }
+             50% { transform: translateX(5px); }
+             75% { transform: translateX(-5px); }
+         }
+     </style>
+ </head>
+ <body class="bg-gray-100 flex items-center justify-center min-h-screen">
+     <div id="app" class="container bg-white p-8 rounded-2xl shadow-xl w-full">
+         <!-- Pantalla de selección de cuestionarios -->
+         <div id="quiz-selection-screen">
+             <h1 class="text-3xl font-bold text-center mb-4 text-indigo-700">Selecciona un Examen de Práctica</h1>
+             <p class="text-center text-gray-600 mb-8">Cada examen contiene 20 preguntas aleatorias que abarcan todo el contenido de la unidad. ¡Mucha suerte!</p>
+             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+                 <button onclick="startQuiz(0)" class="card p-6 text-center gradient-bg text-white font-bold text-xl rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none">Examen de Práctica 1</button>
+                 <button onclick="startQuiz(1)" class="card p-6 text-center gradient-bg text-white font-bold text-xl rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none">Examen de Práctica 2</button>
+                 <button onclick="startQuiz(2)" class="card p-6 text-center gradient-bg text-white font-bold text-xl rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none">Examen de Práctica 3</button>
+                 <button onclick="startQuiz(3)" class="card p-6 text-center gradient-bg text-white font-bold text-xl rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none">Examen de Práctica 4</button>
+                 <button onclick="startQuiz(4)" class="card p-6 text-center gradient-bg text-white font-bold text-xl rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none">Examen de Práctica 5</button>
+                 <button onclick="startQuiz(5)" class="card p-6 text-center gradient-bg text-white font-bold text-xl rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none">Examen de Práctica 6</button>
+                 <button onclick="startQuiz(6)" class="card p-6 text-center gradient-bg text-white font-bold text-xl rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none">Examen de Práctica 7</button>
+                 <button onclick="startQuiz(7)" class="card p-6 text-center gradient-bg text-white font-bold text-xl rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none">Examen de Práctica 8</button>
+                 <button onclick="startQuiz(8)" class="card p-6 text-center gradient-bg text-white font-bold text-xl rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none">Examen de Práctica 9</button>
+                 <button onclick="startQuiz(9)" class="card p-6 text-center gradient-bg text-white font-bold text-xl rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none">Examen de Práctica 10</button>
+             </div>
+         </div>
+
+         <!-- Pantalla del cuestionario -->
+         <div id="quiz-screen" class="hidden">
+             <div class="flex justify-between items-center mb-6">
+                 <div class="text-lg font-semibold text-gray-700">Pregunta <span id="current-question-number"></span> de 20</div>
+                 <div class="text-lg font-semibold text-gray-700">Puntaje: <span id="score">0</span></div>
+             </div>
+             <div class="card p-6 mb-6">
+                 <h2 id="question" class="text-xl font-semibold text-gray-900 mb-6"></h2>
+                 <div id="options-container" class="space-y-4">
+                     <!-- Los botones de opciones se generarán aquí -->
+                 </div>
+             </div>
+             <div id="feedback-message" class="text-left p-4 my-4 rounded-lg font-semibold hidden"></div>
+             <button id="next-button" class="quiz-button w-full py-4 mt-6 gradient-bg text-white font-bold text-lg rounded-lg shadow-md focus:outline-none" onclick="nextQuestion()" disabled>
+                 Siguiente
+             </button>
+         </div>
+
+         <!-- Pantalla de resultados -->
+         <div id="results-screen" class="hidden text-center">
+             <h1 class="text-3xl font-bold text-indigo-700 mb-4">¡Examen Completo!</h1>
+             <p class="text-xl text-gray-700 mb-6">Tu puntaje final es:</p>
+             <div class="text-5xl font-extrabold text-white gradient-bg p-8 rounded-full inline-block shadow-lg mb-8">
+                 <span id="final-score"></span>
+                 <span class="block text-2xl font-normal mt-2">de 20</span>
+             </div>
+             <p class="text-lg text-gray-600 mb-4">¡Sigue practicando para dominar el contenido!</p>
+             <button class="quiz-button py-4 px-8 mt-4 bg-indigo-600 text-white font-bold text-lg rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none" onclick="restartQuiz()">
+                 Volver a la selección
+             </button>
+         </div>
+     </div>
+
+     <script>
+         const allQuestions = [
+            // Pool de preguntas sobre Conjuntos, Relaciones y Funciones
+            // --- CONJUNTOS ---
+            {
+                question: "Si un conjunto A es igual a un conjunto B, ¿qué se puede afirmar sobre sus elementos?",
+                options: ["A tiene más elementos que B", "Tienen exactamente los mismos elementos", "B es un subconjunto propio de A", "No tienen elementos en común"],
+                answer: 1,
+                explanation: "Dos conjuntos son iguales si y solo si tienen exactamente los mismos elementos. El orden y la repetición de elementos no importan."
+            },
+            {
+                question: "El conjunto vacío, denotado por Ø, ¿es subconjunto de qué conjuntos?",
+                options: ["Solo de sí mismo", "De ningún conjunto", "Solo de los conjuntos no vacíos", "De cualquier conjunto A"],
+                answer: 3,
+                explanation: "El conjunto vacío (Ø) es subconjunto de todo conjunto, incluyéndose a sí mismo. Esto es porque la condición 'todo elemento de Ø es un elemento de A' es vacuamente verdadera, ya que Ø no tiene elementos."
+            },
+            {
+                question: "La expresión A ⊆ B significa que...",
+                options: ["A es un elemento de B", "Todo elemento de A es un elemento de B", "A y B son disjuntos", "A y B tienen la misma cantidad de elementos"],
+                answer: 1,
+                explanation: "A ⊆ B denota la inclusión de conjuntos, y significa que A es un subconjunto de B, es decir, cada elemento que pertenece a A también pertenece a B."
+            },
+            {
+                question: "Si A = {a, {b, c}}, ¿cuál de las siguientes afirmaciones es verdadera?",
+                options: ["b ∈ A", "{b, c} ⊆ A", "{a} ∈ A", "{b, c} ∈ A"],
+                answer: 3,
+                explanation: "Los elementos de A son 'a' y el conjunto '{b, c}'. Por lo tanto, el conjunto {b, c} pertenece a A."
+            },
+            {
+                question: "¿Qué representa el conjunto de partes, P(A)?",
+                options: ["El conjunto de todos los elementos de A", "El conjunto de todos los subconjuntos de A", "El conjunto de los elementos pares de A", "El producto cartesiano de A consigo mismo"],
+                answer: 1,
+                explanation: "El conjunto de partes P(A) es el conjunto cuyos elementos son todos los posibles subconjuntos de A, incluyendo el conjunto vacío y el propio A."
+            },
+            {
+                question: "La operación A ∪ B (unión) resulta en un conjunto que contiene...",
+                options: ["Solo los elementos comunes a A y B", "Los elementos que están en A o en B (o en ambos)", "Los elementos de A que no están en B", "Los elementos de un conjunto universal U que no están ni en A ni en B"],
+                answer: 1,
+                explanation: "La unión de A y B contiene todos los elementos que pertenecen a A, o a B, o a ambos. El 'o' es inclusivo."
+            },
+            {
+                question: "La operación A ∩ B (intersección) resulta en un conjunto que contiene...",
+                options: ["Solo los elementos comunes a A y B", "Los elementos que están en A o en B", "Los elementos de A que no están en B", "Todos los elementos de A y B"],
+                answer: 0,
+                explanation: "La intersección de A y B contiene únicamente los elementos que pertenecen simultáneamente a ambos conjuntos."
+            },
+            {
+                question: "Según las leyes de De Morgan, (A ∪ B)ᶜ es equivalente a:",
+                options: ["Aᶜ ∪ Bᶜ", "A ∩ B", "Aᶜ ∩ Bᶜ", "Aᶜ ∪ B"],
+                answer: 2,
+                explanation: "Una de las leyes de De Morgan establece que el complemento de una unión es la intersección de los complementos: (A ∪ B)ᶜ = Aᶜ ∩ Bᶜ."
+            },
+            {
+                question: "¿Qué define la diferencia de conjuntos A - B?",
+                options: ["Los elementos de B que no están en A", "Los elementos comunes a A y B", "Los elementos de A que no están en B", "La unión de A y B"],
+                answer: 2,
+                explanation: "La diferencia A - B (o A \\ B) está formada por todos los elementos que pertenecen a A pero no pertenecen a B. También se puede expresar como A ∩ Bᶜ."
+            },
+            {
+                question: "La diferencia simétrica A Δ B se define como:",
+                options: ["(A - B) ∩ (B - A)", "(A ∪ B) - (A ∩ B)", "A ∩ B", "(A ∪ B)ᶜ"],
+                answer: 1,
+                explanation: "La diferencia simétrica contiene los elementos que están en A o en B, pero no en ambos. Equivale a (A ∪ B) - (A ∩ B) o también a (A - B) ∪ (B - A)."
+            },
+            {
+                question: "Si A y B son conjuntos disjuntos, ¿qué se puede afirmar sobre A ∩ B?",
+                options: ["A ∩ B = A", "A ∩ B = B", "A ∩ B = A ∪ B", "A ∩ B = Ø"],
+                answer: 3,
+                explanation: "Dos conjuntos son disjuntos si no tienen elementos en común, lo que significa que su intersección es el conjunto vacío."
+            },
+            {
+                question: "¿Qué es el producto cartesiano A × B?",
+                options: ["El conjunto de todos los elementos de A y B", "El conjunto de todos los pares ordenados (a, b) con a ∈ A y b ∈ B", "La multiplicación de los cardinales de A y B", "El conjunto de subconjuntos de A y B"],
+                answer: 1,
+                explanation: "El producto cartesiano A × B es el conjunto de todos los posibles pares ordenados donde el primer elemento pertenece a A y el segundo a B."
+            },
+
+            // --- RELACIONES ---
+            {
+                question: "Formalmente, una relación R de un conjunto A en un conjunto B es:",
+                options: ["Una función de A en B", "Un subconjunto del producto cartesiano A × B", "Un par ordenado (a, b)", "Una conexión lógica entre A y B"],
+                answer: 1,
+                explanation: "Una relación R de A en B se define matemáticamente como cualquier subconjunto de A × B. Si un par (a, b) pertenece a R, se dice que 'a está relacionado con b'."
+            },
+            {
+                question: "Una relación R en un conjunto A es reflexiva si...",
+                options: ["Para todo a ∈ A, se cumple a R a", "Si a R b, entonces b R a", "Si a R b y b R c, entonces a R c", "No existen a, b distintos tales que a R b y b R a"],
+                answer: 0,
+                explanation: "Una relación es reflexiva si cada elemento del conjunto está relacionado consigo mismo. En su grafo, esto se representa con un bucle en cada vértice."
+            },
+            {
+                question: "Una relación R en un conjunto A es simétrica si...",
+                options: ["Para todo a ∈ A, se cumple a R a", "Para todo a, b ∈ A, si a R b, entonces b R a", "Para todo a, b ∈ A, si a R b y b R a, entonces a = b", "Para todo a, b, c ∈ A, si a R b y b R c, entonces a R c"],
+                answer: 1,
+                explanation: "La simetría implica que si hay una relación en un sentido (de 'a' a 'b'), también debe existir en el sentido opuesto (de 'b' a 'a')."
+            },
+            {
+                question: "Una relación R en un conjunto A es transitiva si...",
+                options: ["a R a para todo a ∈ A", "Si a R b, entonces b R a", "Si a R b y b R c, entonces a R c", "Si a R b y b R a, entonces a = b"],
+                answer: 2,
+                explanation: "La transitividad establece que si se puede ir de 'a' a 'b' y de 'b' a 'c', entonces debe existir un 'atajo' directo de 'a' a 'c'."
+            },
+            {
+                question: "¿Qué propiedades debe cumplir una relación para ser una relación de equivalencia?",
+                options: ["Reflexiva, Simétrica, Antisimétrica", "Reflexiva, Antisimétrica, Transitiva", "Reflexiva, Simétrica, Transitiva", "Simétrica, Antisimétrica, Transitiva"],
+                answer: 2,
+                explanation: "Una relación de equivalencia generaliza la idea de 'igualdad'. Debe ser reflexiva (todo elemento es igual a sí mismo), simétrica (si a=b, b=a) y transitiva (si a=b y b=c, a=c)."
+            },
+            {
+                question: "¿Qué propiedades debe cumplir una relación para ser una relación de orden?",
+                options: ["Reflexiva, Simétrica, Antisimétrica", "Reflexiva, Antisimétrica, Transitiva", "Reflexiva, Simétrica, Transitiva", "Simétrica, Antisimétrica, Transitiva"],
+                answer: 1,
+                explanation: "Una relación de orden generaliza la idea de 'menor o igual que' (≤). Debe ser reflexiva (a≤a), antisimétrica (si a≤b y b≤a, entonces a=b) y transitiva (si a≤b y b≤c, entonces a≤c)."
+            },
+            {
+                question: "En una relación de equivalencia, el conjunto de todos los elementos relacionados con un elemento 'x' se llama:",
+                options: ["La partición de x", "El dominio de x", "La clase de equivalencia de x", "El orden de x"],
+                answer: 2,
+                explanation: "La clase de equivalencia de 'x', denotada [x] o x̄, agrupa a todos los elementos del conjunto que son equivalentes a 'x' según la relación."
+            },
+            {
+                question: "Una propiedad fundamental de las clases de equivalencia de una relación en un conjunto A es que...",
+                options: ["Todas las clases tienen un solo elemento", "Siempre hay solo dos clases", "Forman una partición de A", "Todas las clases se superponen"],
+                answer: 2,
+                explanation: "Las clases de equivalencia dividen el conjunto A en subconjuntos no vacíos, disjuntos dos a dos, y cuya unión es todo A. Esto es, por definición, una partición del conjunto."
+            },
+            {
+                question: "La relación '≤' (menor o igual que) en el conjunto de los números reales (ℝ) es un ejemplo de:",
+                options: ["Relación de equivalencia", "Relación de orden", "Relación solo simétrica", "Relación solo reflexiva"],
+                answer: 1,
+                explanation: "La relación ≤ es reflexiva (x≤x), antisimétrica (si x≤y y y≤x, entonces x=y) y transitiva (si x≤y y y≤z, entonces x≤z), cumpliendo así las tres propiedades de una relación de orden."
+            },
+            {
+                question: "La relación 'tener el mismo resto al dividir por 3' en el conjunto de los números enteros (ℤ) es un ejemplo de:",
+                options: ["Relación de equivalencia", "Relación de orden", "Relación solo antisimétrica", "Relación solo transitiva"],
+                answer: 0,
+                explanation: "Es una relación de equivalencia. Es reflexiva (n tiene el mismo resto que n), simétrica (si n y m tienen el mismo resto, m y n también) y transitiva (si n y m tienen el mismo resto, y m y p también, entonces n y p tienen el mismo resto)."
+            },
+
+            // --- FUNCIONES ---
+            {
+                question: "¿Qué condición adicional debe cumplir una relación para ser considerada una función f: A → B?",
+                options: ["Debe ser simétrica", "Para cada elemento a ∈ A, existe un único elemento b ∈ B tal que (a, b) está en la relación", "Debe ser transitiva", "Para cada b ∈ B, existe un único a ∈ A tal que (a, b) está en la relación"],
+                answer: 1,
+                explanation: "Una función es un tipo especial de relación donde a cada elemento del dominio (A) se le asigna exactamente un elemento del codominio (B). Esto implica existencia (todo elemento de A tiene imagen) y unicidad (esa imagen es única)."
+            },
+            {
+                question: "En una función f: A → B, el conjunto A se denomina:",
+                options: ["Imagen", "Codominio", "Dominio", "Rango"],
+                answer: 2,
+                explanation: "El conjunto A es el conjunto de partida, donde se 'toman' los valores para aplicar la función. Se llama dominio."
+            },
+            {
+                question: "El conjunto de todos los valores que una función f: A → B realmente toma se llama:",
+                options: ["Dominio", "Codominio", "Imagen (o Rango)", "Relación"],
+                answer: 2,
+                explanation: "La imagen, Im(f), es un subconjunto del codominio (B) que contiene todos los elementos 'b' para los cuales existe un 'a' en el dominio tal que f(a) = b."
+            },
+            {
+                question: "Una función f: A → B es inyectiva si...",
+                options: ["A cada elemento del dominio le corresponde una única imagen", "Elementos distintos del dominio tienen imágenes distintas", "La imagen es igual al codominio", "Es una relación de orden"],
+                answer: 1,
+                explanation: "La inyectividad (o uno a uno) garantiza que no hay dos elementos diferentes en el dominio que 'caigan' en el mismo elemento del codominio. Formalmente: si f(a₁) = f(a₂), entonces a₁ = a₂."
+            },
+            {
+                question: "Una función f: A → B es sobreyectiva (o suryectiva) si...",
+                options: ["Elementos distintos tienen imágenes distintas", "Su imagen es un subconjunto propio del codominio", "Todo elemento del codominio es imagen de al menos un elemento del dominio", "Es una relación de equivalencia"],
+                answer: 2,
+                explanation: "La sobreyectividad garantiza que 'se cubre' todo el codominio. Es decir, para cada elemento 'b' en B, se puede encontrar al menos un 'a' en A tal que f(a) = b. Esto es equivalente a decir Im(f) = B."
+            },
+            {
+                question: "¿Qué es una función biyectiva?",
+                options: ["Es solo inyectiva", "Es solo sobreyectiva", "Es inyectiva y sobreyectiva a la vez", "No es ni inyectiva ni sobreyectiva"],
+                answer: 2,
+                explanation: "Una función es biyectiva si cumple ambas condiciones: es inyectiva (uno a uno) y sobreyectiva (cubre todo el codominio). Esto establece una correspondencia perfecta entre los elementos del dominio y del codominio."
+            },
+            {
+                question: "¿Qué tipo de función debe ser f para que exista su función inversa f⁻¹?",
+                options: ["Inyectiva", "Sobreyectiva", "Biyectiva", "Cualquier función tiene inversa"],
+                answer: 2,
+                explanation: "Una función es inversible si y solo si es biyectiva. La biyectividad garantiza que para cada elemento del codominio hay exactamente un origen en el dominio, permitiendo definir la función inversa sin ambigüedades."
+            },
+            {
+                question: "Dadas f: A → B y g: B → C, la composición g ∘ f es una función de:",
+                options: ["A → C", "C → A", "B → A", "C → B"],
+                answer: 0,
+                explanation: "La composición g ∘ f se aplica de derecha a izquierda: primero se aplica f (de A a B) y al resultado se le aplica g (de B a C). El resultado neto es una función que va de A a C."
+            },
+            {
+                question: "Si f: A → B es una función biyectiva y f⁻¹ es su inversa, ¿a qué es igual f⁻¹ ∘ f?",
+                options: ["f", "f⁻¹", "La función identidad en B (id_B)", "La función identidad en A (id_A)"],
+                answer: 3,
+                explanation: "La composición de una función con su inversa 'deshace' la operación. f⁻¹(f(a)) devuelve el elemento 'a' original. Por lo tanto, f⁻¹ ∘ f es la función identidad en el conjunto de partida, A."
+            },
+            {
+                question: "Si f: A → B es una función biyectiva y f⁻¹ es su inversa, ¿a qué es igual f ∘ f⁻¹?",
+                options: ["f", "f⁻¹", "La función identidad en B (id_B)", "La función identidad en A (id_A)"],
+                answer: 2,
+                explanation: "Similar al caso anterior, pero en orden inverso. f(f⁻¹(b)) devuelve el elemento 'b' original. Por lo tanto, f ∘ f⁻¹ es la función identidad en el conjunto de llegada, B."
+            }
+         ];
+
+         let quizzes = [];
+         let currentQuiz;
+         let currentQuestionIndex = 0;
+         let score = 0;
+
+         const quizSelectionScreen = document.getElementById('quiz-selection-screen');
+         const quizScreen = document.getElementById('quiz-screen');
+         const resultsScreen = document.getElementById('results-screen');
+         const questionElement = document.getElementById('question');
+         const optionsContainer = document.getElementById('options-container');
+         const currentQuestionNumberElement = document.getElementById('current-question-number');
+         const scoreElement = document.getElementById('score');
+         const nextButton = document.getElementById('next-button');
+         const feedbackMessage = document.getElementById('feedback-message');
+         const finalScoreElement = document.getElementById('final-score');
+
+         function shuffleArray(array) {
+             for (let i = array.length - 1; i > 0; i--) {
+                 const j = Math.floor(Math.random() * (i + 1));
+                 [array[i], array[j]] = [array[j], array[i]];
+             }
+         }
+
+         function generateQuizzes() {
+             quizzes = [];
+             for (let i = 0; i < 10; i++) {
+                 const shuffledQuestions = [...allQuestions];
+                 shuffleArray(shuffledQuestions);
+                 const selectedQuestions = shuffledQuestions.slice(0, 20);
+                 
+                 quizzes.push({
+                     id: i,
+                     questions: selectedQuestions
+                 });
+             }
+         }
+
+         function startQuiz(quizIndex) {
+             currentQuiz = quizzes[quizIndex];
+             currentQuestionIndex = 0;
+             score = 0;
+             
+             quizSelectionScreen.classList.add('hidden');
+             resultsScreen.classList.add('hidden');
+             quizScreen.classList.remove('hidden');
+
+             showQuestion();
+         }
+
+         function showQuestion() {
+             const currentQuestionData = currentQuiz.questions[currentQuestionIndex];
+
+             currentQuestionNumberElement.textContent = currentQuestionIndex + 1;
+             scoreElement.textContent = score;
+             questionElement.textContent = currentQuestionData.question;
+             optionsContainer.innerHTML = '';
+             feedbackMessage.classList.add('hidden');
+             feedbackMessage.innerHTML = '';
+             nextButton.disabled = true;
+
+             const options = [...currentQuestionData.options];
+             
+             options.forEach((option, index) => {
+                 const button = document.createElement('button');
+                 button.className = 'answer-button';
+                 button.textContent = option;
+                 button.onclick = () => checkAnswer(button, index);
+                 optionsContainer.appendChild(button);
+             });
+         }
+
+         function checkAnswer(selectedButton, selectedIndex) {
+             const currentQuestionData = currentQuiz.questions[currentQuestionIndex];
+             const correctIndex = currentQuestionData.answer;
+
+             Array.from(optionsContainer.children).forEach((button, index) => {
+                 button.disabled = true;
+                 if (index === correctIndex) {
+                     button.classList.add('correct');
+                 } else if (index === selectedIndex) {
+                     button.classList.add('incorrect');
+                 }
+             });
+
+             if (selectedIndex === correctIndex) {
+                 score++;
+                 feedbackMessage.textContent = '¡Respuesta Correcta!';
+                 feedbackMessage.classList.remove('hidden', 'bg-red-100', 'text-red-700');
+                 feedbackMessage.classList.add('bg-green-100', 'text-green-700');
+             } else {
+                 feedbackMessage.innerHTML = `
+                     <strong>¡Respuesta Incorrecta!</strong> <br>
+                     La respuesta correcta era: <strong>${currentQuestionData.options[correctIndex]}</strong>
+                     <div class="explanation mt-3 p-3 bg-blue-50 border-l-4 border-blue-400 rounded-r">
+                         <strong>Explicación:</strong>
+                         <p class="mt-1">${currentQuestionData.explanation}</p>
+                     </div>
+                 `;
+                 feedbackMessage.classList.remove('hidden', 'bg-green-100', 'text-green-700');
+                 feedbackMessage.classList.add('bg-red-100', 'text-red-700');
+             }
+
+             feedbackMessage.classList.remove('hidden');
+             scoreElement.textContent = score;
+             nextButton.disabled = false;
+             nextButton.focus();
+         }
+
+         function nextQuestion() {
+             currentQuestionIndex++;
+             if (currentQuestionIndex < currentQuiz.questions.length) {
+                 showQuestion();
+             } else {
+                 endQuiz();
+             }
+         }
+
+         function endQuiz() {
+             quizScreen.classList.add('hidden');
+             resultsScreen.classList.remove('hidden');
+             finalScoreElement.textContent = score;
+         }
+
+         function restartQuiz() {
+             resultsScreen.classList.add('hidden');
+             quizSelectionScreen.classList.remove('hidden');
+             generateQuizzes(); // Regenerar los exámenes para que sean diferentes cada vez
+         }
+
+         window.onload = function() {
+             generateQuizzes();
+             quizSelectionScreen.classList.remove('hidden');
+         }
+     </script>
+ </body>
+ </html>
