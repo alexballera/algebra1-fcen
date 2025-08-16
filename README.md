@@ -22,7 +22,7 @@ Es el directorio principal del material de estudio, dividido en sesiones que cor
 
 Cada sesión contiene subdirectorios para el material teórico, las guías de trabajos prácticos, resúmenes y cuestionarios interactivos.
 
-### 📁 `bibliografia/`
+### 📁 `fuentes/`
 
 Contiene material de referencia general, como apuntes teóricos de distintas cátedras, libros recomendados y notas complementarias que sirven de apoyo durante toda la cursada.
 
